@@ -11,6 +11,8 @@ Este registro documenta as principais interações técnicas realizadas com a IA
 
 ## 📋 Histórico de Consultas Técnicas
 
+| Fase / Semana | Categoria Técnica | Prompt Refinado (Consulta Realizada) | Aplicação no Projeto |
+| :--- | :--- | :--- | :--- |
 | **Semana 1** | **Arquitetura & Setup** | *"Quais são as melhores práticas atuais para estruturar um projeto React Native com TypeScript visando escalabilidade e Clean Architecture?"* | Definição da estrutura de pastas modular (`src/screens`, `src/store`, `src/models`) separando responsabilidades. |
 | **Semana 1** | **Ambiente de Dev** | *"Como solucionar conflitos de dependências nativas e configurar variáveis de ambiente para o Android Emulator no Windows?"* | Correção do ambiente de desenvolvimento e configuração do SDK Android para execução do emulador. |
 | **Semana 2** | **Navegação & Tipagem** | *"Como implementar uma navegação em pilha (Stack Navigation) fortemente tipada utilizando TypeScript para garantir segurança na passagem de parâmetros entre telas?"* | Implementação do `AppNavigator.tsx` com interfaces estritas (`RootStackParamList`) para as rotas. |
