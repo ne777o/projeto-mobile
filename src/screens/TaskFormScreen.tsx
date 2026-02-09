@@ -17,6 +17,7 @@ export default function TaskFormScreen() {
   const taskId = route.params?.taskId;
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     if (taskId) {
@@ -33,16 +34,20 @@ export default function TaskFormScreen() {
 
     // Validação rápida para título vazio (mensagem clara para o usuário)
     if (!title || title.trim().length === 0) {
-      Alert.alert('Atenção', 'Título necessário');
+      setErrorMessage('Por favor, adicione um título para a tarefa');
+      Alert.alert('Erro', 'Por favor, adicione um título para a tarefa');
       return;
     }
 
     const result = taskSchema.safeParse(data);
 
     if (!result.success) {
+      setErrorMessage(result.error.issues[0].message);
       Alert.alert('Atenção', result.error.issues[0].message);
       return;
     }
+
+    setErrorMessage('');
 
     if (taskId) {
       const existingTask = tasks.find(t => t.id === taskId)!;
@@ -74,6 +79,12 @@ export default function TaskFormScreen() {
             <Text style={styles.saveText}>Salvar</Text>
           </TouchableOpacity>
         </View>
+
+        {errorMessage && (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorText}>{errorMessage}</Text>
+          </View>
+        )}
 
         <ScrollView contentContainerStyle={styles.container}>
           <Text style={styles.label}>O que você vai fazer?</Text>
@@ -115,6 +126,22 @@ const styles = StyleSheet.create({
   closeBtn: { padding: 5 },
   headerTitle: { fontSize: 18, fontWeight: 'bold', color: '#333' },
   saveText: { fontSize: 16, color: '#6C63FF', fontWeight: 'bold' },
+
+  errorContainer: {
+    backgroundColor: '#FFE5E5',
+    borderLeftWidth: 4,
+    borderLeftColor: '#FF4444',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    marginHorizontal: 16,
+    marginTop: 12,
+    borderRadius: 4,
+  },
+  errorText: {
+    color: '#CC0000',
+    fontSize: 14,
+    fontWeight: '600',
+  },
 
   label: { fontSize: 14, fontWeight: 'bold', color: '#999', marginBottom: 10, marginTop: 20, letterSpacing: 0.5 },
   

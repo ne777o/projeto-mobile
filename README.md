@@ -14,7 +14,7 @@
 
 ## 📸 Link do Vídeo
 
-*(Espaço reservado para colocar seus prints: Tela Inicial, Formulário e Detalhes)*
+https://www.youtube.com/watch?v=T1pdJLKerkI
 
 ---
 
@@ -58,7 +58,7 @@ O projeto segue uma arquitetura limpa e modular dentro da pasta `src/`
 
 1.  **Clone o repositório:**
 ```bash
-    git clone https://github.com/seu-usuario/mobile-app.git
+    git clone https://github.com/ne777o/projeto-mobile
     cd mobile-app
 ```
 

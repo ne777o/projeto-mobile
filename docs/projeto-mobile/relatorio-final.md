@@ -1,7 +1,7 @@
 # Relatório Final do Projeto Mobile
 
 ## Vídeo (obrigatório)
-- Link: [COLE AQUI O LINK DO VÍDEO FINAL]
+- https://www.youtube.com/watch?v=T1pdJLKerkI
 
 ## Visão geral do app (em 5 bullets)
 - Resolve o gerenciamento simples de hábitos/tarefas pessoais (criar, editar, marcar concluído, excluir).

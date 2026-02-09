@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTaskStore } from '../store/taskStore';
 import { MaterialIcons, Feather } from '@expo/vector-icons';
 
-const THEME_COLOR = '#6C63FF'; // Roxo Moderno
+const THEME_COLOR = '#6C63FF'; 
 
 export default function TaskListScreen() {
   const { tasks } = useTaskStore();
